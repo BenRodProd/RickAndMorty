@@ -6,8 +6,10 @@ export default function createCharacterCard(
   occurrences
 ) {
   const cardContainer = document.querySelector('[data-js="card-container"]');
-  return (cardContainer.innerHTML = `
-<li class="card">
+  const newCard = document.createElement("li");
+  newCard.classList.add("card");
+  newCard.innerHTML = `
+
 <div class="card__image-container">
   <img
     class="card__image"
@@ -27,6 +29,6 @@ export default function createCharacterCard(
     <dd class="card__info-description">${occurrences}</dd>
   </dl>
 </div>
-</li>
-`);
+`;
+  cardContainer.append(newCard);
 }
